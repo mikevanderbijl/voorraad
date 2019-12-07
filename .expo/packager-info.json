@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 5386,
-  "expoServerNgrokUrl": "https://7z-trm.anonymous.voorraad-beheersysteem.exp.direct",
-  "packagerNgrokUrl": "https://packager.7z-trm.anonymous.voorraad-beheersysteem.exp.direct",
-  "ngrokPid": 5399
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

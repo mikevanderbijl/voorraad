@@ -24,9 +24,15 @@ const TabNavigator = createBottomTabNavigator(
       navigationOptions: {
         tabBarIcon: () => <FontAwesome5 name="band-aid" size={24} color="#CDCCCE" />
       }
+    },
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        tabBarIcon: () => <FontAwesome5 name="user" size={24} color="#CDCCCE" />
+      }
     }
   },
-
+    
   {
     tabBarOptions: {
       showLabel: false

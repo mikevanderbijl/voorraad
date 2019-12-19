@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19004,
-  "packagerPid": 7359,
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
   "expoServerNgrokUrl": "https://zq-6hg.anonymous.voorraad-beheersysteem.exp.direct",
   "packagerNgrokUrl": "https://packager.zq-6hg.anonymous.voorraad-beheersysteem.exp.direct",
-  "ngrokPid": 7374
+  "ngrokPid": 11284
 }

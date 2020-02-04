@@ -1,42 +1,63 @@
-import React from 'react';
-import { createAppContainer } from 'react-navigation';
-import { createBottomTabNavigator } from 'react-navigation-tabs';
-import { FontAwesome5 } from '@expo/vector-icons';
-
+import React from 'react';  
+import {StyleSheet, Text, View,Button} from 'react-native';  
+import { createBottomTabNavigator, createAppContainer} from 'react-navigation';  
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';  
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';  
 import { JournalScreen, MeasureScreen, TreatmentScreen, ProfileScreen } from './screens/LinksScreen';
 
-const TabNavigator = createBottomTabNavigator(
-{
-Journal: {
-screen: JournalScreen,
-navigationOptions: {
-tabBarIcon: () => <FontAwesome5 name="home" size={24} color="#CDCCCE" />
-}
-},
-Measures: {
-screen: MeasureScreen,
-navigationOptions: {
-tabBarIcon: () => <FontAwesome5 name="user" size={24} color="#CDCCCE" />
-}
-},
-Treatment: {
-screen: TreatmentScreen,
-navigationOptions: {
-tabBarIcon: () => <FontAwesome5 name="fingerprint" size={24} color="#CDCCCE" />
-}
-},
-Profile: {
-screen: ProfileScreen,
-navigationOptions: {
-tabBarIcon: () => <FontAwesome5 name="list" size={24} color="#CDCCCE" />
-}
-}
-},
-{
-tabBarOptions: {
-showLabel: false
-}
-}
-);
-
+const TabNavigator = createMaterialBottomTabNavigator(  
+    {  
+        Home: { screen: JournalScreen,  
+          navigationOptions:{ 
+            // tabBarVisible: false,
+            tabBarIcon: ({ tintColor }) => (  
+              <View>  
+                  <MaterialCommunityIcons style={[{color: tintColor}]} size={25} name={'exit-run'}/>  
+              </View>), 
+          },
+        },  
+        Dashboard: { screen: MeasureScreen,  
+            navigationOptions:{  
+                tabBarLabel:'Product scan',  
+                tabBarIcon: ({ tintColor }) => (  
+                    <View>  
+                        <FontAwesome5 style={[{color: tintColor}]} size={25} name={'fingerprint'}/>  
+                    </View>),  
+                activeColor: '#f60c0d',  
+                inactiveColor: '#f65a22',  
+                barStyle: { backgroundColor: '#f69b31' },  
+            }  
+        },  
+        ProductList: { screen: TreatmentScreen,  
+            navigationOptions:{  
+                tabBarLabel:'ProductList',  
+                tabBarIcon: ({ tintColor }) => (  
+                    <View>  
+                        <FontAwesome5 style={[{color: tintColor}]} size={25} name={'archive'}/>  
+                    </View>),  
+                activeColor: '#615af6',  
+                inactiveColor: '#46f6d7',  
+                barStyle: { backgroundColor: '#67baf6' },  
+            }  
+        },  
+        ProductDetail: { screen: ProfileScreen,
+          navigationOptions:{ 
+            tabBarLabel:' ',  
+          },
+        },
+        ProductScaned: { screen: ProfileScreen,
+          navigationOptions:{
+            tabBarLabel:' ',
+          }
+        }
+    },  
+    {  
+      initialRouteName: "Home",  
+      activeColor: '#f0edf6',  
+      inactiveColor: '#226557',  
+      barStyle: { backgroundColor: '#3BAD87' },  
+    },  
+);  
+  
 export default createAppContainer(TabNavigator);

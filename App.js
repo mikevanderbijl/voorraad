@@ -4,7 +4,7 @@ import { createBottomTabNavigator, createAppContainer} from 'react-navigation';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';  
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';  
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';  
-import { JournalScreen, MeasureScreen, TreatmentScreen, ProfileScreen } from './screens/LinksScreen';
+import { JournalScreen, MeasureScreen, TreatmentScreen, ProfileScreen, ProductDetail } from './screens/LinksScreen';
 
 const TabNavigator = createMaterialBottomTabNavigator(  
     {  
@@ -30,27 +30,29 @@ const TabNavigator = createMaterialBottomTabNavigator(
             }  
         },  
         ProductList: { screen: TreatmentScreen,  
-            navigationOptions:{  
-                tabBarLabel:'ProductList',  
-                tabBarIcon: ({ tintColor }) => (  
-                    <View>  
-                        <FontAwesome5 style={[{color: tintColor}]} size={25} name={'archive'}/>  
-                    </View>),  
-                activeColor: '#615af6',  
-                inactiveColor: '#46f6d7',  
-                barStyle: { backgroundColor: '#67baf6' },  
-            }  
-        },  
-        ProductDetail: { screen: ProfileScreen,
-          navigationOptions:{ 
-            tabBarLabel:' ',  
-          },
-        },
-        ProductScaned: { screen: ProfileScreen,
-          navigationOptions:{
-            tabBarLabel:' ',
-          }
-        }
+          navigationOptions:{  
+              tabBarLabel:'ProductList',  
+              tabBarIcon: ({ tintColor }) => (  
+                  <View>  
+                      <FontAwesome5 style={[{color: tintColor}]} size={25} name={'archive'}/>  
+                  </View>),  
+              activeColor: '#615af6',  
+              inactiveColor: '#46f6d7',  
+              barStyle: { backgroundColor: '#67baf6' },  
+          }  
+      },        
+      ProductDetail: { screen: ProductDetail,  
+        navigationOptions:{  
+            tabBarLabel:'ProductDetail',  
+            tabBarIcon: ({ tintColor }) => (  
+                <View>  
+                    <FontAwesome5 style={[{color: tintColor}]} size={25} name={'archive'}/>  
+                </View>),  
+            activeColor: '#615af6',  
+            inactiveColor: '#46f6d7',  
+            barStyle: { backgroundColor: '#67baf6' },  
+        }  
+    },
     },  
     {  
       initialRouteName: "Home",  

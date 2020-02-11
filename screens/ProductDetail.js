@@ -14,12 +14,14 @@ export default class ProductDetailScreen extends Component {
       super(props);
     }
     render() { 
-        const { navigation } = this.props;
+        const tekstId = this.props.navigation.getParam('itemId', 'NO-ID');
         return (
         <View style={generalStyles.container}>
             <View>
-                <Text>Hello world product: 
-                    {/* {JSON.stringify(navigation.getParam('itemId', 'NO-ID'))} */}
+                <Text>
+                    {tekstId}
+                    {/* Hello world product: */}
+                    {/* {JSON.stringify(this.props.navigation.getParam('itemId', 'NO-ID'))} */}
                 </Text>
             </View> 
         </View>

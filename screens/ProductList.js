@@ -15,20 +15,21 @@ import {generalStyles, listStyles} from '../src/styles';
 export default class ProductListScreen extends Component {
     constructor(props){
       super(props);
-      this.onPress = this.onPress.bind(this);
+      this.renderItem = this.renderItem.bind(this);
       this.state = {
         dataSource: []
       }
     }
-    onPress(productId) {
-        this.props.navigation.navigate('ProductDetail', {itemId: productId});
-    }
-
+    // onPress(productId) {
+        // const {navigate} = this.props.navigation;
+        // navigate('ProductDetail', {itemId: productId})
+    // }
     renderItem = ({item}) => {
       const navigation = this.props.navigation;
+      console.log(this.props);
       return(   
         <View>
-            <TouchableHighlight onPress = {() => navigation.navigate('ProductDetail', {tekstId: 'Hello world product'})}>
+            <TouchableHighlight onPress = {() => this.props.navigation.navigate('ProductDetail')}>
                 <View style={listStyles.TextArea}>
                     <Image 
                         style={listStyles.Image} 
